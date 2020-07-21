@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/schoolcatalog/static/css/main.5f361e03.chunk.css",
+    "main.js": "/schoolcatalog/static/js/main.8cb08e43.chunk.js",
+    "main.js.map": "/schoolcatalog/static/js/main.8cb08e43.chunk.js.map",
+    "runtime-main.js": "/schoolcatalog/static/js/runtime-main.1d27b30d.js",
+    "runtime-main.js.map": "/schoolcatalog/static/js/runtime-main.1d27b30d.js.map",
+    "static/js/2.313dbd98.chunk.js": "/schoolcatalog/static/js/2.313dbd98.chunk.js",
+    "static/js/2.313dbd98.chunk.js.map": "/schoolcatalog/static/js/2.313dbd98.chunk.js.map",
+    "index.html": "/schoolcatalog/index.html",
+    "precache-manifest.3b8cd052c3db295f065c124e34bd041f.js": "/schoolcatalog/precache-manifest.3b8cd052c3db295f065c124e34bd041f.js",
+    "service-worker.js": "/schoolcatalog/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/schoolcatalog/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.313dbd98.chunk.js.LICENSE.txt": "/schoolcatalog/static/js/2.313dbd98.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d27b30d.js",
+    "static/js/2.313dbd98.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.8cb08e43.chunk.js"
+  ]
+}
