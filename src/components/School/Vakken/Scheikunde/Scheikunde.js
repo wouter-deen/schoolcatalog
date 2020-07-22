@@ -84,7 +84,7 @@ function Homepage() {
           <Link color="primary" href="/" variant="h6">
             Home
           </Link>
-          <Link color="primary" href="/vakken" variant="h6">
+          <Link color="primary" href="/#/vakken" variant="h6">
             Vakken
           </Link>
           <Typography color="primary" variant="h6">Scheikunde</Typography>

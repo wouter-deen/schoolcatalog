@@ -93,7 +93,7 @@ function Vakken() {
               <IconNatuurkunde />
             </Avatar>
           </ListItemAvatar>
-          <ListItemLink href="/vakken/natuurkunde">
+          <ListItemLink href="/#/vakken/natuurkunde">
             <ListItemText primary="Natuurkunde" secondary="Samenvattingen" />
           </ListItemLink>
         </ListItem>
@@ -106,7 +106,7 @@ function Vakken() {
               <IconScheikunde />
             </Avatar>
           </ListItemAvatar>
-          <ListItemLink href="/vakken/scheikunde">
+          <ListItemLink href="/#/vakken/scheikunde">
             <ListItemText primary="Scheikunde" secondary="Samenvattingen" />
           </ListItemLink>
         </ListItem>

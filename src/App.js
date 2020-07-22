@@ -8,7 +8,7 @@ import Vakken from './components/School/Vakken/Vakken'
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <Route exact path='/' component={Homepage}/>
       <Route exact path='/vakken' component={Vakken}/>
       <Route exact path='/vakken/natuurkunde' component={Natuurkunde}/>

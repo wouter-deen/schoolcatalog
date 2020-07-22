@@ -56,36 +56,18 @@ const footerTheme = createMuiTheme({
   },
 });
 
-//copyright
-function Copyright() {
-  return (
-    <ThemeProvider theme={footerTheme}>
-      <Typography color="primary" variant="body2" align="center">
-        {'Copyright © '}
-        <Link color="primary" href="https://github.com/wouter-deen" target="_blank">
-          Wouter Deen
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    </ThemeProvider>
-
-  );
-}
-
 //rendering
 function Homepage() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
+      {/*breadcrumbs*/}
       <div className={classes.breadCrumbs}>
-
-        {/*breadcrumbs*/}
-        <Breadcrumbs color="primary" separator="›" aria-label="breadcrumb">
-          <Link color="primary" href="/" variant="h6">
+        <Breadcrumbs color="secondary" separator="›" aria-label="breadcrumb">
+          <Link color="secondary" href="/" variant="h6">
             Home
           </Link>
-          <Typography color="primary" variant="h6">Vakken</Typography>
+          <Typography color="secondary" variant="h6">Vakken</Typography>
         </Breadcrumbs>
       </div>
 

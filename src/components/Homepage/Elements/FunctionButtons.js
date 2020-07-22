@@ -69,13 +69,13 @@ function FButtons() {
         <DialogContent align="center">
 
           <div className={classes.dialogButton}>
-            <Button variant="contained" endIcon={<GoIcon/>} color="primary" href="/vakken/natuurkunde">
+            <Button variant="contained" endIcon={<GoIcon/>} color="primary" href="/#/vakken/natuurkunde">
               Natuurkunde
             </Button>
           </div>
 
           <div className={classes.dialogButton}>
-            <Button variant="contained" endIcon={<GoIcon/>} color="primary" href="/vakken/natuurkunde">
+            <Button variant="contained" endIcon={<GoIcon/>} color="primary" href="/#/vakken/scheikunde">
               Scheikunde
             </Button>
           </div>
