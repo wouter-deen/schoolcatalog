@@ -1,22 +1,29 @@
 {
   "files": {
     "main.css": "/schoolcatalog/static/css/main.e9cd4286.chunk.css",
-    "main.js": "/schoolcatalog/static/js/main.1281422e.chunk.js",
-    "main.js.map": "/schoolcatalog/static/js/main.1281422e.chunk.js.map",
+    "main.js": "/schoolcatalog/static/js/main.e5ecfe94.chunk.js",
+    "main.js.map": "/schoolcatalog/static/js/main.e5ecfe94.chunk.js.map",
     "runtime-main.js": "/schoolcatalog/static/js/runtime-main.1d27b30d.js",
     "runtime-main.js.map": "/schoolcatalog/static/js/runtime-main.1d27b30d.js.map",
     "static/css/2.c2905fbd.chunk.css": "/schoolcatalog/static/css/2.c2905fbd.chunk.css",
-    "static/js/2.b52d8770.chunk.js": "/schoolcatalog/static/js/2.b52d8770.chunk.js",
-    "static/js/2.b52d8770.chunk.js.map": "/schoolcatalog/static/js/2.b52d8770.chunk.js.map",
+    "static/js/2.2b1aca91.chunk.js": "/schoolcatalog/static/js/2.2b1aca91.chunk.js",
+    "static/js/2.2b1aca91.chunk.js.map": "/schoolcatalog/static/js/2.2b1aca91.chunk.js.map",
     "index.html": "/schoolcatalog/index.html",
-    "precache-manifest.3ea974fd0d27a8c20f72144c65f049cc.js": "/schoolcatalog/precache-manifest.3ea974fd0d27a8c20f72144c65f049cc.js",
+    "precache-manifest.710d71246673d9cb636cdb1b42dcb8ba.js": "/schoolcatalog/precache-manifest.710d71246673d9cb636cdb1b42dcb8ba.js",
     "service-worker.js": "/schoolcatalog/service-worker.js",
     "static/css/2.c2905fbd.chunk.css.map": "/schoolcatalog/static/css/2.c2905fbd.chunk.css.map",
     "static/css/main.e9cd4286.chunk.css.map": "/schoolcatalog/static/css/main.e9cd4286.chunk.css.map",
-    "static/js/2.b52d8770.chunk.js.LICENSE.txt": "/schoolcatalog/static/js/2.b52d8770.chunk.js.LICENSE.txt",
+    "static/js/2.2b1aca91.chunk.js.LICENSE.txt": "/schoolcatalog/static/js/2.2b1aca91.chunk.js.LICENSE.txt",
     "static/media/Logo.svg": "/schoolcatalog/static/media/Logo.5f8eb271.svg",
+    "static/media/NOVA Samenvatting H1.pdf": "/schoolcatalog/static/media/NOVA Samenvatting H1.faba2c5f.pdf",
+    "static/media/NOVA Samenvatting H5.pdf": "/schoolcatalog/static/media/NOVA Samenvatting H5.719c8254.pdf",
+    "static/media/NOVA Samenvatting H7.1-7.4.pdf": "/schoolcatalog/static/media/NOVA Samenvatting H7.1-7.4.d63c5705.pdf",
+    "static/media/SN Samenvatting H1-2.pdf": "/schoolcatalog/static/media/SN Samenvatting H1-2.43653590.pdf",
+    "static/media/SN Samenvatting H3.pdf": "/schoolcatalog/static/media/SN Samenvatting H3.98575277.pdf",
+    "static/media/SN Samenvatting H4.1-3+5.pdf": "/schoolcatalog/static/media/SN Samenvatting H4.1-3+5.fc1f55dd.pdf",
+    "static/media/SN Samenvatting H4.pdf": "/schoolcatalog/static/media/SN Samenvatting H4.aa765bed.pdf",
     "static/media/about.png": "/schoolcatalog/static/media/about.34ed1541.png",
-    "static/media/background.jpg": "/schoolcatalog/static/media/background.7235239d.jpg",
+    "static/media/background.jpg": "/schoolcatalog/static/media/background.b53ddbcf.jpg",
     "static/media/natuurkunde.png": "/schoolcatalog/static/media/natuurkunde.3b74c553.png",
     "static/media/index.css": "/schoolcatalog/static/media/roboto-latin-900-normal.bb1e4dc6.woff",
     "static/media/samenvattingen.png": "/schoolcatalog/static/media/samenvattingen.4fb5f8f5.png",
@@ -26,8 +33,8 @@
   "entrypoints": [
     "static/js/runtime-main.1d27b30d.js",
     "static/css/2.c2905fbd.chunk.css",
-    "static/js/2.b52d8770.chunk.js",
+    "static/js/2.2b1aca91.chunk.js",
     "static/css/main.e9cd4286.chunk.css",
-    "static/js/main.1281422e.chunk.js"
+    "static/js/main.e5ecfe94.chunk.js"
   ]
 }
