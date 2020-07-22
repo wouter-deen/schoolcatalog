@@ -82,7 +82,7 @@ function Homepage() {
 
         {/*breadcrumbs*/}
         <Breadcrumbs color="primary" separator="›" aria-label="breadcrumb">
-          <Link color="primary" href="/schoolcatalog" variant="h6">
+          <Link color="primary" href="/" variant="h6">
             Home
           </Link>
           <Typography color="primary" variant="h6">Vakken</Typography>

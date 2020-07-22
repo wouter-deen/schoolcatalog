@@ -82,10 +82,10 @@ function Homepage() {
       <img src={Background} className={classes.background}/>
       <div className={classes.breadCrumbs}>
         <Breadcrumbs color="primary" separator="›" aria-label="breadcrumb">
-          <Link color="primary" href="/schoolcatalog" variant="h6">
+          <Link color="primary" href="/" variant="h6">
             Home
           </Link>
-          <Link color="primary" href="/schoolcatalog/vakken" variant="h6">
+          <Link color="primary" href="/vakken" variant="h6">
             Vakken
           </Link>
           <Typography color="primary" variant="h6">Natuurkunde</Typography>

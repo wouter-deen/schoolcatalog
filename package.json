@@ -1,7 +1,7 @@
 {
   "homepage": "https://wouter.live/",
-  "name": "schoolcatalog",
-  "version": "0.1.0",
+  "name": "wouter",
+  "version": "0.2.0",
   "private": false,
   "dependencies": {
     "@material-ui/core": "^4.11.0",

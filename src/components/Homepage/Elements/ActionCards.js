@@ -95,7 +95,7 @@ export default function Cards() {
                       Ik leer vaak beter door leerstof in mijn eigen woorden op te schrijven in een samenvatting.
                       Veel mensen maken gebruik van mijn samenvattingen, dus blijkbaar zijn ze goed.
                       Je vindt hier de beste samenvattingen van mij voor o.a. natuurkunde en scheikunde.
-                      Mijn samenvattingen bevatten alle leerstof die je nodig hebt!
+                      Ze bevatten alle leerstof die je nodig hebt!
                     </Box>
                   </CardContent>
                 </Card>
