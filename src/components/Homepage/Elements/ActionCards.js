@@ -96,9 +96,6 @@ export default function Cards() {
                       Veel mensen maken gebruik van mijn samenvattingen, dus blijkbaar zijn ze goed.
                       Je vindt hier de beste samenvattingen van mij voor o.a. natuurkunde en scheikunde.
                       Mijn samenvattingen bevatten alle leerstof die je nodig hebt!
-                      <Button endIcon={<GoIcon/>} size="medium" variant="contained" className={classes.gotoSamenvattingen}>
-                        Bekijk samenvattingen
-                      </Button>
                     </Box>
                   </CardContent>
                 </Card>

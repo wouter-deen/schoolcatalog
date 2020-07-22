@@ -1,34 +1,16 @@
 import React from "react";
 import {
-  Card,
-  CardContent,
-  CardMedia,
   Typography,
-  Button,
-  Container,
-  Grid,
   makeStyles,
   Link,
-  CssBaseline,
-  IconButton,
   createMuiTheme,
-  ThemeProvider
+  ThemeProvider,
+  Breadcrumbs
 } from "@material-ui/core";
 import Box from "@material-ui/core/Box"
 import ProjectLijst from "./ProjectLijst"
 import BackIcon from "@material-ui/icons/ArrowBack"
-import Logo from "../Images/Logo.svg"
 import Background from "./background.jpg"
-import {purple} from "@material-ui/core/colors";
-import grey from "@material-ui/core/colors/grey";
-
-const backButtonTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#ffffff'
-    }
-  },
-});
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -37,40 +19,36 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(6),
     height: "50px",
-    bottom: theme.spacing(3),
     left: 0,
     right: 0,
-    position: "fixed",
+    paddingBottom: theme.spacing(14),
+    position: "absolute"
   },
   reportFouten: {
     marginLeft: "3px"
   },
-  BackButton: {
-    marginLeft: theme.spacing(15),
-    marginTop: theme.spacing(5)
-  },
-  logo: {
+  breadCrumbs: {
     position: "absolute",
-    marginLeft: theme.spacing(2),
     marginTop: theme.spacing(2),
-    width: theme.spacing(13),
-    height: theme.spacing(13)
+    marginLeft: theme.spacing(3)
   },
-  topButtons: {
-    position: "absolute"
+  BackButton: {
+    marginLeft: theme.spacing(3),
+    marginTop: theme.spacing(2)
   },
   main: {
-    backgroundImage: `url(${Background})`,
-    zIndex: "-2",
-    width: "100%",
-    height: "100vh",
-    backgroundSize: "cover"
-  },
-  backButtonText: {
-    marginBottom: theme.spacing(0.6),
-    marginLeft: theme.spacing(1)
-  }
 
+  },
+  background: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+
+    /* Preserve aspet ratio */
+    maxWidth: "100%",
+    minHeight: "100%",
+    zIndex: -10
+  }
 }));
 
 const footerTheme = createMuiTheme({
@@ -101,23 +79,24 @@ function Homepage() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
-      <div className={classes.topButtons}>
-        <img src={Logo} className={classes.logo}/>
-        <ThemeProvider theme={backButtonTheme}>
-          <IconButton className={classes.BackButton} href="/schoolcatalog">
-            <BackIcon fontSize="large" color="primary"/>
-            <Box color="#ffffff" fontWeight="fontWeightRegular" fontSize="30px" className={classes.backButtonText}>
-                home
-            </Box>
-          </IconButton>
-        </ThemeProvider>
+      <img src={Background} className={classes.background}/>
+      <div className={classes.breadCrumbs}>
+        <Breadcrumbs color="primary" separator="›" aria-label="breadcrumb">
+          <Link color="primary" href="/schoolcatalog" variant="h6">
+            Home
+          </Link>
+          <Link color="primary" href="/schoolcatalog/vakken" variant="h6">
+            Vakken
+          </Link>
+          <Typography color="primary" variant="h6">Natuurkunde</Typography>
+        </Breadcrumbs>
       </div>
 
       <div align="center">
         {/*titel*/}
         <div className={classes.title}>
           {/*<img className={classes.logoImage} src={Logo} alt="logo"/>*/}
-          <Box color="#ffffff" fontSize="75px" m={1} fontWeight={"fontWeightBold"}>
+          <Box color="#ffffff" fontSize="56px" m={1} fontWeight={"fontWeightBold"}>
             Natuurkunde💡
           </Box>
           <Box color="#ffffff" fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"}>

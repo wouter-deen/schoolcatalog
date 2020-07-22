@@ -1,16 +1,17 @@
-import React from "react";
+import React from "react"
 import {
   Typography,
   makeStyles,
   Link,
   createMuiTheme,
   ThemeProvider
-} from "@material-ui/core";
+} from "@material-ui/core"
 import Box from "@material-ui/core/Box"
 import ActionCards from '../Homepage/Elements/ActionCards'
 import FunctionButtons from './Elements/FunctionButtons'
-import Logo from "../School/Vakken/Images/Logo.svg";
-import Background from "./Images/background.jpg";
+import Logo from "../School/Vakken/Images/Logo.svg"
+import Background from "./Images/background.jpg"
+import 'fontsource-roboto';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -19,9 +20,9 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(6),
     height: "50px",
-    bottom: theme.spacing(3),
     left: 0,
-    right: 0
+    right: 0,
+    paddingBottom: theme.spacing(10)
   },
   reportFouten: {
     marginLeft: "3px"
@@ -34,11 +35,17 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(13),
   },
   main: {
-    backgroundImage: `url(${Background})`,
-    zIndex: "-2",
-    width: "100%",
-    height: "100vh",
-    backgroundSize: "cover"
+
+  },
+  background: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+
+    /* Preserve aspet ratio */
+    maxWidth: "100%",
+    minHeight: "100%",
+    zIndex: -10
   }
 }));
 
@@ -67,10 +74,12 @@ function Copyright() {
   );
 }
 
+//rendering
 function Homepage() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
+      <img src={Background} className={classes.background}/>
       <img src={Logo} className={classes.logo}/>
       <div align="center">
         {/*titel*/}
@@ -94,7 +103,7 @@ function Homepage() {
               Gemaakt met ❤️
             </Typography>
             <Typography color="primary" variant="subtitle1" align="center" component="p">
-              Deze site zit in de testfase en kan fouten bevatten. Ik ben niet verantwoordelijk voor eventuele fouten van verstrekte informatie.
+              Deze site zit in de testfase en kan fouten bevatten.
               <Link color="primary" href="https://github.com/wouter-deen/schoolcatalog/issues" target="_blank" className={classes.reportFouten}>
                 Rapporteer fouten hier.
               </Link>{' '}
