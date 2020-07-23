@@ -1,19 +1,26 @@
 {
   "files": {
     "main.css": "/static/css/main.e9cd4286.chunk.css",
-    "main.js": "/static/js/main.62da4b25.chunk.js",
-    "main.js.map": "/static/js/main.62da4b25.chunk.js.map",
+    "main.js": "/static/js/main.0cb34e67.chunk.js",
+    "main.js.map": "/static/js/main.0cb34e67.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b8b21557.js",
     "runtime-main.js.map": "/static/js/runtime-main.b8b21557.js.map",
     "static/css/2.e3d0dd9d.chunk.css": "/static/css/2.e3d0dd9d.chunk.css",
-    "static/js/2.66ae6a5a.chunk.js": "/static/js/2.66ae6a5a.chunk.js",
-    "static/js/2.66ae6a5a.chunk.js.map": "/static/js/2.66ae6a5a.chunk.js.map",
+    "static/js/2.424d777e.chunk.js": "/static/js/2.424d777e.chunk.js",
+    "static/js/2.424d777e.chunk.js.map": "/static/js/2.424d777e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ee2ba0aabb980d37c8456dbe309338bc.js": "/precache-manifest.ee2ba0aabb980d37c8456dbe309338bc.js",
+    "precache-manifest.fa3a8b6c67c4a222df7507985bbd36ba.js": "/precache-manifest.fa3a8b6c67c4a222df7507985bbd36ba.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.e3d0dd9d.chunk.css.map": "/static/css/2.e3d0dd9d.chunk.css.map",
     "static/css/main.e9cd4286.chunk.css.map": "/static/css/main.e9cd4286.chunk.css.map",
-    "static/js/2.66ae6a5a.chunk.js.LICENSE.txt": "/static/js/2.66ae6a5a.chunk.js.LICENSE.txt",
+    "static/js/2.424d777e.chunk.js.LICENSE.txt": "/static/js/2.424d777e.chunk.js.LICENSE.txt",
+    "static/media/CO Samenvatting H1-2 3V.pdf": "/static/media/CO Samenvatting H1-2 3V.118ac1a6.pdf",
+    "static/media/CO Samenvatting H1-3 4V.pdf": "/static/media/CO Samenvatting H1-3 4V.49ba7a9e.pdf",
+    "static/media/CO Samenvatting H3 3V.pdf": "/static/media/CO Samenvatting H3 3V.d298e4ac.pdf",
+    "static/media/CO Samenvatting H4-5, 3.7 4V.pdf": "/static/media/CO Samenvatting H4-5, 3.7 4V.53a36903.pdf",
+    "static/media/CO Samenvatting H6 4V.pdf": "/static/media/CO Samenvatting H6 4V.12883485.pdf",
+    "static/media/CO Samenvatting H7 4V.pdf": "/static/media/CO Samenvatting H7 4V.4ea51f2c.pdf",
+    "static/media/CO Samenvatting ionen 3V.pdf": "/static/media/CO Samenvatting ionen 3V.ccd3bdfb.pdf",
     "static/media/Logo.svg": "/static/media/Logo.5f8eb271.svg",
     "static/media/NOVA Samenvatting H1.pdf": "/static/media/NOVA Samenvatting H1.faba2c5f.pdf",
     "static/media/NOVA Samenvatting H5.pdf": "/static/media/NOVA Samenvatting H5.719c8254.pdf",
@@ -24,17 +31,16 @@
     "static/media/SN Samenvatting H4.pdf": "/static/media/SN Samenvatting H4.aa765bed.pdf",
     "static/media/about.png": "/static/media/about.34ed1541.png",
     "static/media/background.jpg": "/static/media/background.b53ddbcf.jpg",
-    "static/media/natuurkunde.png": "/static/media/natuurkunde.3b74c553.png",
+    "static/media/bg.jpg": "/static/media/bg.452b1c8a.jpg",
     "static/media/index.css": "/static/media/roboto-latin-900-normal.bb1e4dc6.woff",
     "static/media/samenvattingen.png": "/static/media/samenvattingen.4fb5f8f5.png",
-    "static/media/scheikunde.png": "/static/media/scheikunde.8f10a80e.png",
     "static/media/videografie.png": "/static/media/videografie.4ced62c1.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b8b21557.js",
     "static/css/2.e3d0dd9d.chunk.css",
-    "static/js/2.66ae6a5a.chunk.js",
+    "static/js/2.424d777e.chunk.js",
     "static/css/main.e9cd4286.chunk.css",
-    "static/js/main.62da4b25.chunk.js"
+    "static/js/main.0cb34e67.chunk.js"
   ]
 }
