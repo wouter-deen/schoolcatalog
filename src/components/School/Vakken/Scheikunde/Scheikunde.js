@@ -29,14 +29,16 @@ const useStyles = makeStyles((theme) => ({
   breadCrumbs: {
     position: "absolute",
     marginTop: theme.spacing(2),
-    marginLeft: theme.spacing(3)
+    marginLeft: theme.spacing(3),
+    color: '#000000'
   },
   BackButton: {
     marginLeft: theme.spacing(3),
     marginTop: theme.spacing(2)
   },
   main: {
-
+    background: "linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)",
+    minHeight: "100vh"
   },
   background: {
     position: "fixed",
@@ -53,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 const footerTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#ffffff'
+      main: '#000000'
     }
   },
 });
@@ -78,16 +80,15 @@ function Homepage() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
-      <img src={Background} className={classes.background}/>
       <div className={classes.breadCrumbs}>
-        <Breadcrumbs color="primary" separator="›" aria-label="breadcrumb">
-          <Link color="primary" href="/" variant="h6">
+        <Breadcrumbs separator="›" aria-label="breadcrumb">
+          <Link href="/" variant="h6">
             Home
           </Link>
-          <Link color="primary" href="/#/vakken" variant="h6">
+          <Link href="/#/vakken" variant="h6">
             Vakken
           </Link>
-          <Typography color="primary" variant="h6">Scheikunde</Typography>
+          <Typography variant="h6">Scheikunde</Typography>
         </Breadcrumbs>
       </div>
 
@@ -95,10 +96,10 @@ function Homepage() {
         {/*titel*/}
         <div className={classes.title}>
           {/*<img className={classes.logoImage} src={Logo} alt="logo"/>*/}
-          <Box color="#ffffff" fontSize="56px" m={1} fontWeight={"fontWeightBold"}>
+          <Box color="#000000" fontSize="56px" m={1} fontWeight={"fontWeightBold"}>
             Scheikunde🧪
           </Box>
-          <Box color="#ffffff" fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"}>
+          <Box color="#000000" fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"}>
             Bekijk hier al mijn samenvattingen.
           </Box>
         </div>

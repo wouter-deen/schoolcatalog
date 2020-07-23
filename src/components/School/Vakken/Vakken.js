@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
   breadCrumbs: {
     position: "absolute",
     marginTop: theme.spacing(2),
-    marginLeft: theme.spacing(3)
+    marginLeft: theme.spacing(3),
+    color: '#000000'
   },
   list: {
     marginLeft: theme.spacing(2),
@@ -51,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 const footerTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#ffffff'
+      main: '#000000'
     }
   },
 });
@@ -63,11 +64,11 @@ function Homepage() {
     <div className={classes.main}>
       {/*breadcrumbs*/}
       <div className={classes.breadCrumbs}>
-        <Breadcrumbs color="secondary" separator="›" aria-label="breadcrumb">
-          <Link color="secondary" href="/" variant="h6">
+        <Breadcrumbs separator="›" aria-label="breadcrumb">
+          <Link href="/" variant="h6">
             Home
           </Link>
-          <Typography color="secondary" variant="h6">Vakken</Typography>
+          <Typography variant="h6">Vakken</Typography>
         </Breadcrumbs>
       </div>
 
