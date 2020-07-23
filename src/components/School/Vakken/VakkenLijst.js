@@ -7,8 +7,7 @@ import {
   ThemeProvider, List, ListItem, ListItemAvatar, Avatar, ListItemText, Divider
 } from "@material-ui/core"
 import 'fontsource-roboto';
-import IconNatuurkunde from '@material-ui/icons/Build'
-import IconScheikunde from '@material-ui/icons/WavesOutlined'
+import IconReady from '@material-ui/icons/Check'
 import IconOverig from '@material-ui/icons/HighlightOffOutlined'
 
 const useStyles = makeStyles((theme) => ({
@@ -90,7 +89,7 @@ function Vakken() {
         <ListItem>
           <ListItemAvatar>
             <Avatar>
-              <IconNatuurkunde />
+              <IconReady/>
             </Avatar>
           </ListItemAvatar>
           <ListItemLink href="/#/vakken/natuurkunde">
@@ -103,7 +102,7 @@ function Vakken() {
         <ListItem>
           <ListItemAvatar>
             <Avatar>
-              <IconScheikunde />
+              <IconReady/>
             </Avatar>
           </ListItemAvatar>
           <ListItemLink href="/#/vakken/scheikunde">

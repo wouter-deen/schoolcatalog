@@ -81,7 +81,7 @@ export default function Cards() {
             <Grid container spacing={4}>
               {/* Samenvattingen */}
               <Grid item xs={12} sm={6} md={4}>
-                <Card className={classes.card} elevation={15}>
+                <Card className={classes.card} elevation={20}>
                   <CardMedia
                     className={classes.cardMedia}
                     image={SamenvattingenImage}
@@ -103,7 +103,7 @@ export default function Cards() {
 
               {/* Scheikunde */}
               <Grid item xs={12} sm={6} md={4}>
-                <Card className={classes.card} elevation={15}>
+                <Card className={classes.card} elevation={20}>
                   <CardMedia
                     className={classes.cardMedia}
                     image={VideografieImage}
@@ -124,7 +124,7 @@ export default function Cards() {
 
               {/* nog niks */}
               <Grid item xs={12} sm={6} md={4}>
-                <Card className={classes.card} elevation={15}>
+                <Card className={classes.card} elevation={20}>
                   <CardMedia
                     className={classes.cardMedia}
                     image={AboutImage}

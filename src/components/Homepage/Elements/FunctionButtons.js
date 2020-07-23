@@ -1,10 +1,10 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core";
 import Fab from '@material-ui/core/Fab';
-import ShareIcon from '@material-ui/icons/Share';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import AppsIcon from '@material-ui/icons/Apps';
+import CameraIcon from '@material-ui/icons/CameraAlt';
 import NavigationIcon from '@material-ui/icons/SchoolRounded';
-import { Button, Dialog, DialogTitle, DialogContent, TextField, DialogActions, DialogContentText} from '@material-ui/core';
+import { Button, Dialog, DialogTitle, DialogContent, TextField, DialogActions, DialogContentText, Menu, MenuItem} from '@material-ui/core';
 import PlusIcon from '@material-ui/icons/AddBoxRounded'
 import Box from "@material-ui/core/Box";
 import GoIcon from "@material-ui/icons/ChevronRight"
@@ -35,11 +35,11 @@ function FButtons() {
 
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+  const handleClickSamenvattingen = () => {
     setOpen(true)
   }
 
-  const handleClose = () => {
+  const handleCloseSamenvattingen = () => {
     setOpen(false)
   }
 
@@ -47,22 +47,22 @@ function FButtons() {
     <div>
       {/*functieknoppen*/}
       <div className={classes.FunctionButtons}>
-        <Fab color="primary" variant="extended" onClick={handleClickOpen}>
+        <Fab color="primary" variant="extended" onClick={handleClickSamenvattingen}>
           <NavigationIcon className={classes.extendedIcon}/>
           Samenvattingen
         </Fab>
 
-        <Fab color="secondary" aria-label="edit">
-          <ShareIcon />
+        <Fab aria-label="edit" href={"/#/vakken"}>
+          <AppsIcon />
         </Fab>
 
-        <Fab disabled aria-label="like">
-          <FavoriteIcon />
+        <Fab aria-label="like">
+          <CameraIcon />
         </Fab>
       </div>
 
-      {/* Popup screen (dialog) */}
-      <Dialog open={open} onClose={handleClose}>
+      {/* Samenvattingen popup screen */}
+      <Dialog open={open} onClose={handleCloseSamenvattingen}>
         <Box fontSize="30px" m={1} fontWeight={"fontWeightBold"} align="center" className={classes.dialogTitle}>
           Samenvattingen
         </Box>
@@ -82,9 +82,10 @@ function FButtons() {
 
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="default">Sluiten</Button>
+          <Button onClick={handleCloseSamenvattingen} color="default">Sluiten</Button>
         </DialogActions>
       </Dialog>
+
     </div>
   )
 }
