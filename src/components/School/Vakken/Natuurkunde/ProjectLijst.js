@@ -7,9 +7,9 @@ import NOVA1 from './Samenvattingen/NOVA Samenvatting H1.pdf'
 import NOVA2 from './Samenvattingen/NOVA Samenvatting H5.pdf'
 import NOVA3 from './Samenvattingen/NOVA Samenvatting H7.1-7.4.pdf'
 import SN1 from './Samenvattingen/SN Samenvatting H1-2.pdf'
-import SN2 from './Samenvattingen/SN Samenvatting H4.1-3+5.pdf'
-import SN3 from './Samenvattingen/SN Samenvatting H3.pdf'
-import SN4 from './Samenvattingen/SN Samenvatting H4.pdf'
+import SN2 from './Samenvattingen/SN Samenvatting H3.pdf'
+import SN3 from './Samenvattingen/SN Samenvatting H4.pdf'
+import SN4 from './Samenvattingen/SN Samenvatting H4.1-3+5.pdf'
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
