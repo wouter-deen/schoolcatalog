@@ -29,10 +29,12 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     position: "absolute",
-    marginLeft: theme.spacing(2),
-    marginTop: theme.spacing(2),
-    width: theme.spacing(13),
-    height: theme.spacing(13),
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(12),
+    width: theme.spacing(20),
+    height: theme.spacing(20),
+    zIndex: -1,
+    transform: "rotate(10deg)"
   },
   main: {
 
@@ -44,8 +46,9 @@ const useStyles = makeStyles((theme) => ({
 
     /* Preserve aspet ratio */
     maxWidth: "100%",
-    minHeight: "100%",
-    zIndex: -10
+    minHeight: "100vh",
+    zIndex: -10,
+    display: "flex"
   }
 }));
 
@@ -80,7 +83,6 @@ function Homepage() {
   return (
     <div className={classes.main}>
       <img src={Background} className={classes.background}/>
-      <img src={Logo} className={classes.logo}/>
       <div align="center">
         {/*titel*/}
         <div className={classes.title}>
