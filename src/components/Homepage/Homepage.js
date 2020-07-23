@@ -10,7 +10,7 @@ import Box from "@material-ui/core/Box"
 import ActionCards from '../Homepage/Elements/ActionCards'
 import FunctionButtons from './Elements/FunctionButtons'
 import Logo from "../School/Vakken/Images/Logo.svg"
-import Background from "./Images/background.jpg"
+import Background from "./Images/bg.jpg"
 import 'fontsource-roboto';
 
 const useStyles = makeStyles((theme) => ({
