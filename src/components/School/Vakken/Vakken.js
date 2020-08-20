@@ -9,10 +9,11 @@ import {
 import Box from "@material-ui/core/Box"
 import 'fontsource-roboto';
 import VakkenLijst from './VakkenLijst'
+import NavBar from "../../NavBar/NavBar";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    paddingTop: theme.spacing(5),
+    paddingTop: theme.spacing(12),
   },
   footer: {
     padding: theme.spacing(6),
@@ -21,27 +22,16 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     paddingBottom: theme.spacing(10)
   },
-  reportFouten: {
-    marginLeft: "3px"
-  },
   main: {
-
-  },
-  background: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-
-    /* Preserve aspet ratio */
-    maxWidth: "100%",
-    minHeight: "100%",
-    zIndex: -10
   },
   breadCrumbs: {
     position: "absolute",
     marginTop: theme.spacing(2),
-    marginLeft: theme.spacing(3),
-    color: '#000000'
+    marginLeft: theme.spacing(2),
+    color: '#000000',
+    background: "rgba(117, 125, 232, .9)",
+    padding: "5px",
+    borderRadius: "10px",
   },
   list: {
     marginLeft: theme.spacing(2),
@@ -62,15 +52,7 @@ function Homepage() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
-      {/*breadcrumbs*/}
-      <div className={classes.breadCrumbs}>
-        <Breadcrumbs separator="›" aria-label="breadcrumb">
-          <Link href="/" variant="h6">
-            Home
-          </Link>
-          <Typography variant="h6">Vakken</Typography>
-        </Breadcrumbs>
-      </div>
+      {NavBar(false)}
 
       <div align="center">
         {/*titel*/}

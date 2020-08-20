@@ -9,12 +9,14 @@ import {
 } from "@material-ui/core";
 import Box from "@material-ui/core/Box"
 import ProjectLijst from "./ProjectLijst"
-import BackIcon from "@material-ui/icons/ArrowBack"
-import Background from "./background.jpg"
+import Background from "./bg.jpg"
+import Footer from "../../../Footer";
+import bg from "./bg.jpg";
+import NavBar from "../../../NavBar/NavBar";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    paddingTop: theme.spacing(5),
+    paddingTop: theme.spacing(12),
   },
   footer: {
     padding: theme.spacing(6),
@@ -26,19 +28,16 @@ const useStyles = makeStyles((theme) => ({
   reportFouten: {
     marginLeft: "3px"
   },
-  breadCrumbs: {
-    position: "absolute",
-    marginTop: theme.spacing(2),
-    marginLeft: theme.spacing(3),
-    color: '#000000'
-  },
   BackButton: {
     marginLeft: theme.spacing(3),
     marginTop: theme.spacing(2)
   },
   main: {
-    background: "linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)",
-    minHeight: "100vh"
+    width: "100%",
+    minHeight: "100vh",
+    marginBottom: "0px",
+    backgroundImage: "url(" + bg + ")",
+    backgroundSize: "400px 400px"
   },
   background: {
     position: "fixed",
@@ -60,37 +59,11 @@ const footerTheme = createMuiTheme({
   },
 });
 
-//copyright
-function Copyright() {
-  return (
-    <ThemeProvider theme={footerTheme}>
-      <Typography variant="body2" color="primary" align="center">
-        {'Copyright © '}
-        <Link color="primary" href="https://github.com/wouter-deen" target="_blank">
-          Wouter Deen
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    </ThemeProvider>
-  );
-}
-
 function Homepage() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
-      <div className={classes.breadCrumbs}>
-        <Breadcrumbs separator="›" aria-label="breadcrumb">
-          <Link href="/" variant="h6">
-            Home
-          </Link>
-          <Link href="/#/vakken" variant="h6">
-            Vakken
-          </Link>
-          <Typography variant="h6">Scheikunde</Typography>
-        </Breadcrumbs>
-      </div>
+      {NavBar(false)}
 
       <div align="center">
         {/*titel*/}
@@ -106,20 +79,7 @@ function Homepage() {
 
         <ProjectLijst/>
 
-        <ThemeProvider theme={footerTheme}>
-          <footer className={classes.footer}>
-            <Typography color="primary" variant="h6" align="center" gutterBottom>
-              Gemaakt met ❤️
-            </Typography>
-            <Typography variant="subtitle1" align="center" color="primary" component="p">
-              Dit project is in de testfase en kan fouten bevatten.
-              <Link color="primary" href="https://github.com/wouter-deen/schoolcatalog/issues" target="_blank" className={classes.reportFouten}>
-                Rapporteer fouten hier.
-              </Link>{' '}
-            </Typography>
-            <Copyright />
-          </footer>
-        </ThemeProvider>
+        <Footer/>
       </div>
     </div>
   )

@@ -9,11 +9,13 @@ import {
 } from "@material-ui/core";
 import Box from "@material-ui/core/Box"
 import ProjectLijst from "./ProjectLijst"
-import BackIcon from "@material-ui/icons/ArrowBack"
+import Footer from "../../../Footer";
+import bg from "./floral-tropical-seamless-pattern-palm-leaves-background_1016-51.jpg";
+import NavBar from "../../../NavBar/NavBar";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    paddingTop: theme.spacing(5),
+    paddingTop: theme.spacing(12),
   },
   footer: {
     padding: theme.spacing(6),
@@ -25,19 +27,17 @@ const useStyles = makeStyles((theme) => ({
   reportFouten: {
     marginLeft: "3px"
   },
-  breadCrumbs: {
-    position: "absolute",
-    marginTop: theme.spacing(2),
-    marginLeft: theme.spacing(3),
-    color: '#000000'
-  },
   BackButton: {
     marginLeft: theme.spacing(3),
     marginTop: theme.spacing(2)
   },
   main: {
-    background: "linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)",
-    minHeight: "100vh"
+    width: "100%",
+    minHeight: "100vh",
+    marginBottom: "0px",
+    backgroundImage: "url(" + bg + ")",
+    backgroundSize: "400px 400px",
+    zIndex: "0"
   },
   background: {
     position: "fixed",
@@ -75,53 +75,27 @@ function Copyright() {
   );
 }
 
-function Homepage() {
+export default function Natuurkunde() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
-      <div className={classes.breadCrumbs}>
-        <Breadcrumbs separator="›" aria-label="breadcrumb">
-          <Link href="/" variant="h6">
-            Home
-          </Link>
-          <Link href="/#/vakken" variant="h6">
-            Vakken
-          </Link>
-          <Typography variant="h6">Natuurkunde</Typography>
-        </Breadcrumbs>
-      </div>
+      {NavBar(false)}
 
       <div align="center">
         {/*titel*/}
         <div className={classes.title}>
           {/*<img className={classes.logoImage} src={Logo} alt="logo"/>*/}
-          <Box color="#000000" fontSize="56px" m={1} fontWeight={"fontWeightBold"}>
+          <Box color="#ffffff" fontSize="56px" m={1} fontWeight={"fontWeightBold"}>
             Natuurkunde💡
           </Box>
-          <Box color="#000000" fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"}>
+          <Box color="#ffffff" fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"}>
             Bekijk hier al mijn samenvattingen.
           </Box>
         </div>
 
         <ProjectLijst/>
-
-        <ThemeProvider theme={footerTheme}>
-          <footer className={classes.footer}>
-            <Typography color="primary" variant="h6" align="center" gutterBottom>
-              Gemaakt met ❤️
-            </Typography>
-            <Typography variant="subtitle1" align="center" color="primary" component="p">
-              Dit project is in de testfase en kan fouten bevatten.
-              <Link color="primary" href="https://github.com/wouter-deen/schoolcatalog/issues" target="_blank" className={classes.reportFouten}>
-                Rapporteer fouten hier.
-              </Link>{' '}
-            </Typography>
-            <Copyright />
-          </footer>
-        </ThemeProvider>
+        <Footer/>
       </div>
     </div>
   )
 }
-
-export default Homepage

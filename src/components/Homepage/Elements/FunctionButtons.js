@@ -47,18 +47,15 @@ function FButtons() {
     <div>
       {/*functieknoppen*/}
       <div className={classes.FunctionButtons}>
-        <Fab color="primary" variant="extended" onClick={handleClickSamenvattingen}>
+        <Fab color="primary" variant="extended" href="/#/vakken">
           <NavigationIcon className={classes.extendedIcon}/>
           Samenvattingen
         </Fab>
 
-        <Fab aria-label="edit" href={"/#/vakken"}>
+        <Fab aria-label="vakken" href={"/#/vakken"}>
           <AppsIcon />
         </Fab>
 
-        <Fab aria-label="like">
-          <CameraIcon />
-        </Fab>
       </div>
 
       {/* Samenvattingen popup screen */}

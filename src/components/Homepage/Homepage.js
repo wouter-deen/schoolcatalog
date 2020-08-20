@@ -9,23 +9,14 @@ import {
 import Box from "@material-ui/core/Box"
 import ActionCards from '../Homepage/Elements/ActionCards'
 import FunctionButtons from './Elements/FunctionButtons'
-import Logo from "../School/Vakken/Images/Logo.svg"
-import Background from "./Images/bg.jpg"
 import 'fontsource-roboto';
+import Footer from "../Footer"
+import NavBar from "../NavBar/NavBar";
+import bg from "./Images/bg2.jpg";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    paddingTop: theme.spacing(5),
-  },
-  footer: {
-    padding: theme.spacing(6),
-    height: "50px",
-    left: 0,
-    right: 0,
-    paddingBottom: theme.spacing(10)
-  },
-  reportFouten: {
-    marginLeft: "3px"
+    paddingTop: theme.spacing(12)
   },
   logo: {
     position: "absolute",
@@ -37,19 +28,30 @@ const useStyles = makeStyles((theme) => ({
     transform: "rotate(10deg)"
   },
   main: {
-
+    width: "100%",
+    minHeight: "100vh",
+    //background: "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+    marginBottom: "0px",
+    backgroundImage: "url(" + bg + ")",
+    backgroundSize: "cover",
+    backgroundPosition: "center"
   },
   background: {
     position: "fixed",
     top: 0,
     left: 0,
+    marginLeft: "auto",
+    marginRight: "auto",
 
     /* Preserve aspet ratio */
-    maxWidth: "100%",
+    minWidth: "100%",
     minHeight: "100vh",
-    zIndex: -10,
-    display: "flex"
-  }
+    zIndex: -1,
+    display: "flex",
+    backgroundPosition: "center"
+  },
+  footer: {}
+
 }));
 
 const footerTheme = createMuiTheme({
@@ -60,59 +62,30 @@ const footerTheme = createMuiTheme({
   },
 });
 
-//copyright
-function Copyright() {
-  return (
-    <ThemeProvider theme={footerTheme}>
-      <Typography color="primary" variant="body2" align="center">
-        {'Copyright © '}
-        <Link color="primary" href="https://github.com/wouter-deen" target="_blank">
-          Wouter Deen
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    </ThemeProvider>
-
-  );
-}
-
 //rendering
 function Homepage() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
-      <img src={Background} className={classes.background}/>
+      {/*<img src={bg} className={classes.background}/>*/}
+      {NavBar(false)}
       <div align="center">
         {/*titel*/}
         <div className={classes.title}>
           {/*<img className={classes.logoImage} src={Logo} alt="logo"/>*/}
-          <Box fontSize="75px" m={1} fontWeight={"fontWeightBold"}>
+          <Box fontSize="75px" m={1} fontWeight={"fontWeightBold"} color="#ffffff">
             Hey👋
           </Box>
-          <Box fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"}>
+          <Box fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"} color="#ffffff">
             Ik ben Wouter, welkom op mijn site.
           </Box>
+          <FunctionButtons/>
         </div>
 
-        {/*functieknoppen*/}
-        <FunctionButtons/>
         <ActionCards/>
+        <Footer/>
 
-        <ThemeProvider theme={footerTheme}>
-          <footer className={classes.footer}>
-            <Typography color="primary" variant="h6" align="center" gutterBottom>
-              Gemaakt met ❤️
-            </Typography>
-            <Typography color="primary" variant="subtitle1" align="center" component="p">
-              Deze site zit in de testfase en kan fouten bevatten.
-              <Link color="primary" href="https://github.com/wouter-deen/schoolcatalog/issues" target="_blank" className={classes.reportFouten}>
-                Rapporteer fouten hier.
-              </Link>{' '}
-            </Typography>
-            <Copyright />
-          </footer>
-        </ThemeProvider>
+        {/*<Footer className={classes.footer}/>*/}
 
       </div>
     </div>
