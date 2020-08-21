@@ -7,7 +7,7 @@ import CO4 from './Samenvattingen/CO Samenvatting H1-3 4V.pdf'
 import CO5 from './Samenvattingen/CO Samenvatting H4-5, 3.7 4V.pdf'
 import CO6 from './Samenvattingen/CO Samenvatting H6 4V.pdf'
 import CO7 from './Samenvattingen/CO Samenvatting H7 4V.pdf'
-import CardGenerator from "../CardGenerator";
+import CardGenerator from "../ActionCards/CardGenerator";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {

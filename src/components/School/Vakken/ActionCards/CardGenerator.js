@@ -5,11 +5,12 @@ import {
   Button,
   Grid,
   makeStyles,
-  CardActions
+  CardActions, PropTypes
 } from "@material-ui/core";
 import Box from "@material-ui/core/Box"
 import DownloadIcon from "@material-ui/icons/OpenInNew";
 import ErrorIcon from "@material-ui/icons/ErrorOutline";
+import CardButtons from "./CardButtons";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const CardGenerator = props => {
+function CardGenerator(props) {
   const classes = useStyles()
   return (
     <Grid item xs={12} sm={6} md={4}>
@@ -67,12 +68,7 @@ const CardGenerator = props => {
 
         <CardActions className={classes.buttons}>
           <Box>
-            <Button startIcon={<DownloadIcon/>} variant="contained" color="primary" href={props.documentLink} target="_blank" className={classes.button}>
-              Bekijken
-            </Button>
-            <Button startIcon={<ErrorIcon/>} variant="outlined" target="_blank" className={classes.button} href="https://github.com/wouter-deen/schoolcatalog/issues">
-              Fout melden
-            </Button>
+            <CardButtons onderwerp={props.onderwerp} documentLink={props.documentLink}/>
           </Box>
         </CardActions>
       </Card>

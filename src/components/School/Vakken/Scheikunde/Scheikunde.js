@@ -59,8 +59,9 @@ const footerTheme = createMuiTheme({
   },
 });
 
-function Homepage() {
+export default function Scheikunde() {
   const classes = useStyles();
+  document.addEventListener('contextmenu', event => event.preventDefault());
   return (
     <div className={classes.main}>
       {NavBar(false)}
@@ -84,5 +85,3 @@ function Homepage() {
     </div>
   )
 }
-
-export default Homepage

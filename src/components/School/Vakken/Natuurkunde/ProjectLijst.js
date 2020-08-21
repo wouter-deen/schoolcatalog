@@ -7,7 +7,7 @@ import SN1 from './Samenvattingen/SN Samenvatting H1-2.pdf'
 import SN2 from './Samenvattingen/SN Samenvatting H3.pdf'
 import SN3 from './Samenvattingen/SN Samenvatting H4.pdf'
 import SN4 from './Samenvattingen/SN Samenvatting H4.1-3+5.pdf'
-import CardGenerator from "../CardGenerator";
+import CardGenerator from "../ActionCards/CardGenerator";
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {

@@ -77,6 +77,7 @@ function Copyright() {
 
 export default function Natuurkunde() {
   const classes = useStyles();
+  document.addEventListener('contextmenu', event => event.preventDefault());
   return (
     <div className={classes.main}>
       {NavBar(false)}
