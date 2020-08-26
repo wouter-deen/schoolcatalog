@@ -98,17 +98,17 @@ export default function ProjectLijst() {
           />
           <CardGenerator
             klas="4"
-            onderwerp="Energie en warmt"
+            onderwerp="Energie en warmte"
             boek="Systematische Natuurkunde"
             lesstof="hfst. 4"
-            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FSN%20Samenvatting%20H4.1-3%2B5.pdf?alt=media&token=7a6d4a7b-95f3-47be-87e6-a2caaaabf126"
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FSN%20Samenvatting%20H4.pdf?alt=media&token=fc830c4d-f4fa-44ca-808b-394fe1c686d3"
           />
           <CardGenerator
             klas="4"
             onderwerp="Energie en warmte"
             boek="Systematische Natuurkunde"
             lesstof="hfst. 4.1 t/m 4.3 & 4.5"
-            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FSN%20Samenvatting%20H4.pdf?alt=media&token=fc830c4d-f4fa-44ca-808b-394fe1c686d3"
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FSN%20Samenvatting%20H4.1-3%2B5.pdf?alt=media&token=7a6d4a7b-95f3-47be-87e6-a2caaaabf126"
           />
         </Grid>
       </Container>

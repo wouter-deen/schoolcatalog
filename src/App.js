@@ -15,11 +15,11 @@ function App() {
     <AuthProvider>
       <Router>
         <Route exact path='/' component={Homepage}/>
-        <Route exact path='/registreren' component={RegisterPage}/>
-        <PrivateRoute exact path='/dashboard' component={Dashboard}/>
-        <PrivateRoute exact path='/vakken' component={Vakken}/>
-        <PrivateRoute exact path='/vakken/natuurkunde' component={Natuurkunde}/>
-        <PrivateRoute exact path='/vakken/scheikunde' component={Scheikunde}/>
+        <Route exact path='/registreren/' component={RegisterPage}/>
+        <PrivateRoute exact path='/dashboard/' component={Dashboard}/>
+        <PrivateRoute exact path='/vakken/' component={Vakken}/>
+        <PrivateRoute exact path='/vakken/natuurkunde/' component={Natuurkunde}/>
+        <PrivateRoute exact path='/vakken/scheikunde/' component={Scheikunde}/>
       </Router>
     </AuthProvider>
   )
