@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, {useContext} from "react"
 import {
   AppBar,
   Toolbar,
@@ -7,12 +7,13 @@ import {
   createMuiTheme,
   ThemeProvider,
   makeStyles,
-  PropTypes
 } from "@material-ui/core"
 import AccountIcon from "@material-ui/icons/AccountCircleOutlined"
 import Logo from '../School/Vakken/Images/Logo.svg'
-import Homepage from "../Homepage/Homepage";
 import OpenIcon from "@material-ui/icons/KeyboardArrowRight"
+import LoginDialog from "../Firebase/LoginDialog";
+import LogoutDialog from "../Firebase/LogoutDialog";
+import app from "../Firebase/base";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -44,8 +45,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavBar(loggedIn) {
+export default function NavBar() {
   const classes = useStyles();
+  const [openLoginDialog, setOpenLoginDialog] = React.useState(false);
+  const [openLogoutDialog, setOpenLogoutDialog] = React.useState(false);
+  const currentUser = app.auth().currentUser
 
   const theme = createMuiTheme({
     palette: {
@@ -58,27 +62,53 @@ export default function NavBar(loggedIn) {
     },
   });
 
+  const handleClickOpenLogin = () => {
+    setOpenLoginDialog(true);
+  };
 
+  const handleCloseLogin = (value) => {
+    setOpenLoginDialog(false);
+  };
 
-  const accountButton = (
-    <ThemeProvider theme={theme}>
-      <IconButton className={classes.accountButton} color="primary" variant="outlined" href="/home">
-        <AccountIcon/>
-      </IconButton>
-    </ThemeProvider>
-  )
+  const handleClickOpenLogout = () => {
+    setOpenLogoutDialog(true);
+  };
 
-  const loginButton = (
-    <ThemeProvider theme={theme}>
-      <Button size="medium" variant="outlined" color="primary" href="/login">
-        log in
-      </Button>
-    </ThemeProvider>
-  )
+  const handleCloseLogout = (value) => {
+    setOpenLogoutDialog(false);
+  };
+
+  function LoginLogoutButton() {
+    if (currentUser) {
+      return (
+        <div>
+          <ThemeProvider theme={theme}>
+            <IconButton className={classes.accountButton} color="primary" variant="outlined" href="/dashboard/">
+              <AccountIcon/>
+            </IconButton>
+          </ThemeProvider>
+          <ThemeProvider theme={theme}>
+            <Button size="medium" variant="outlined" color="primary" onClick={handleClickOpenLogout}>
+              log uit
+            </Button>
+          </ThemeProvider>
+        </div>
+
+      )
+    } else {
+      return (
+        <ThemeProvider theme={theme}>
+          <Button size="medium" variant="outlined" color="primary" onClick={handleClickOpenLogin}>
+            log in
+          </Button>
+        </ThemeProvider>
+      )
+    }
+  }
 
   const samenvattingenButton = (
     <ThemeProvider theme={theme}>
-      <Button className={classes.samenvattingenButton} size="medium" variant="outlined" color="primary" href="/#/vakken" endIcon={<OpenIcon/>}>
+      <Button className={classes.samenvattingenButton} size="medium" variant="outlined" color="primary" href="/vakken/" endIcon={<OpenIcon/>}>
         samenvattingen
       </Button>
     </ThemeProvider>
@@ -89,33 +119,28 @@ export default function NavBar(loggedIn) {
       <img className={classes.logo} alt="logo badge" src={Logo} href="/"/>
     </a>
   )
+  return (
+    <div className={classes.main}>
+      <ThemeProvider theme={theme}>
+        <AppBar position="static" color="secondary" className={classes.appbar}>
+          <Toolbar>
+            {logo}
+            {/*desktop site navigation buttons*/}
+            <div className={classes.sectionDesktop}>
+              {samenvattingenButton}
+            </div>
 
-  if(loggedIn === true) {
+            {/*mobile site navigation buttons*/}
+            <div className={classes.sectionMobile}>
 
-  } else {
-    return (
-      <div className={classes.main}>
-        <ThemeProvider theme={theme}>
-          <AppBar position="static" color="secondary" className={classes.appbar}>
-            <Toolbar>
-              {logo}
-              {/*desktop site navigation buttons*/}
-              <div className={classes.sectionDesktop}>
-                {samenvattingenButton}
-              </div>
-
-              {/*mobile site navigation buttons*/}
-              <div className={classes.sectionMobile}>
-
-              </div>
-              <div style={{flexGrow: 1}}/>
-              {accountButton}
-              {loginButton}
-            </Toolbar>
-          </AppBar>
-        </ThemeProvider>
-
-      </div>
-    )
-  }
+            </div>
+            <div style={{flexGrow: 1}}/>
+            <LoginLogoutButton/>
+          </Toolbar>
+        </AppBar>
+      </ThemeProvider>
+      <LoginDialog open={openLoginDialog} onClose={handleCloseLogin}/>
+      <LogoutDialog open={openLogoutDialog} onClose={handleCloseLogout}/>
+    </div>
+  )
 }

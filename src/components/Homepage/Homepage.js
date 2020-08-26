@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  Typography,
-  makeStyles,
-  Link,
-  createMuiTheme,
-  ThemeProvider
-} from "@material-ui/core"
+import {makeStyles} from "@material-ui/core"
 import Box from "@material-ui/core/Box"
 import ActionCards from '../Homepage/Elements/ActionCards'
 import FunctionButtons from './Elements/FunctionButtons'
@@ -13,6 +7,7 @@ import 'fontsource-roboto';
 import Footer from "../Footer"
 import NavBar from "../NavBar/NavBar";
 import bg from "./Images/bg2.jpg";
+import app from "../Firebase/base";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -36,57 +31,33 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center"
   },
-  background: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    marginLeft: "auto",
-    marginRight: "auto",
-
-    /* Preserve aspet ratio */
-    minWidth: "100%",
-    minHeight: "100vh",
-    zIndex: -1,
-    display: "flex",
-    backgroundPosition: "center"
-  },
-  footer: {}
-
+  bottomSpacing: {
+    paddingBottom: theme.spacing(5)
+  }
 }));
-
-const footerTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#ffffff'
-    }
-  },
-});
 
 //rendering
 function Homepage() {
   const classes = useStyles();
+  const currentUser = app.auth().currentUser
+
   return (
     <div className={classes.main}>
       {/*<img src={bg} className={classes.background}/>*/}
-      {NavBar(false)}
+      <NavBar/>
       <div align="center">
         {/*titel*/}
         <div className={classes.title}>
           {/*<img className={classes.logoImage} src={Logo} alt="logo"/>*/}
-          <Box fontSize="75px" m={1} fontWeight={"fontWeightBold"} color="#ffffff">
-            Hey👋
-          </Box>
-          <Box fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"} color="#ffffff">
-            Ik ben Wouter, welkom op mijn site.
-          </Box>
+          {currentUser ? <Box fontSize="60px" m={1} fontWeight="fontWeightBold" color="#ffffff">Hey {currentUser.displayName}<span role="img" aria-label="emoji">👋</span></Box>
+            : <Box fontSize="75px" m={1} fontWeight="fontWeightBold" color="#ffffff">Hey <span role="img" aria-label="emoji">👋</span></Box>}
+          {currentUser ? <Box fontSize="h4.fontSize" m={1} fontWeight="fontWeightBold" color="#ffffff">Welkom terug!</Box>
+            : <Box fontSize="h4.fontSize" m={1} fontWeight="fontWeightBold" color="#ffffff">Ik ben Wouter, welkom op mijn site.</Box>}
           <FunctionButtons/>
         </div>
-
         <ActionCards/>
         <Footer/>
-
-        {/*<Footer className={classes.footer}/>*/}
-
+        <div className={classes.bottomSpacing}/>
       </div>
     </div>
   )

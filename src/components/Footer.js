@@ -1,6 +1,5 @@
 import React from "react"
 import {
-  Typography,
   makeStyles,
   Link,
   createMuiTheme,
@@ -22,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
   },
   disclaimer: {
     marginTop: theme.spacing(1)
+  },
+  copyright: {
+    paddingTop: theme.spacing(.5)
   }
 }));
 
@@ -33,46 +35,32 @@ const whiteTheme = createMuiTheme({
   },
 });
 
-//copyright
-function Copyright() {
-  return (
-    <Box color="#ffffff" fontSize="14px" align="center">
-      {'Copyright © '}
-      <Link color="primary" href="https://www.instagram.com/wouter_deen/" target="_blank">
-        Wouter Deen
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Box>
-  );
-}
-
 //rendering
 export default function Footer() {
   const classes = useStyles();
     return (
       <div className={classes.main}>
-          <footer className={classes.footer}>
-            <Box color="#ffffff" fontWeight="fontWeightMedium" fontSize="20px" align="center" gutterBottom>
-              Gemaakt met ❤️
-            </Box>
-            <Box color="#ffffff" align="center" className={classes.disclaimer}>
-              Deze site zit in de testfase en kan fouten bevatten.
-              <Link href="https://github.com/wouter-deen/schoolcatalog/issues" target="_blank" className={classes.reportFouten}>
-                Rapporteer fouten hier.
-              </Link>
-            </Box>
-            <Box color="#ffffff" fontSize="14px" align="center">
-              {'Copyright © '}
-              <ThemeProvider theme={whiteTheme}>
-                <Link color="primary" href="https://www.instagram.com/wouter_deen/" target="_blank">
-                  Wouter Deen
-                </Link>{' '}
-              </ThemeProvider>
-              {new Date().getFullYear()}
-              {'.'}
-            </Box>
-          </footer>
+        <footer className={classes.footer}>
+          <Box color="#ffffff" fontWeight="fontWeightMedium" fontSize="20px" align="center">
+            Gemaakt met <span role="img" aria-label="emoji">❤</span>️
+          </Box>
+          <Box color="#ffffff" align="center" className={classes.disclaimer}>
+            Deze site komt net uit de testfase (v1.0.0) en kan fouten bevatten.
+            <Link href="https://github.com/wouter-deen/schoolcatalog/issues" target="_blank" className={classes.reportFouten}>
+              Rapporteer fouten hier.
+            </Link>
+          </Box>
+          <Box color="#ffffff" fontSize="14px" align="center" className={classes.copyright}>
+            {'Copyright © '}
+            <ThemeProvider theme={whiteTheme}>
+              <Link color="primary" href="https://www.instagram.com/wouter_deen/" target="_blank">
+                Wouter Deen
+              </Link>{' '}
+            </ThemeProvider>
+            {new Date().getFullYear()}
+            {'.'}
+          </Box>
+        </footer>
       </div>
     )
 }

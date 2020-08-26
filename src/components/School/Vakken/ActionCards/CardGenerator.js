@@ -2,15 +2,13 @@ import React from "react";
 import {
   Card,
   CardContent,
-  Button,
   Grid,
   makeStyles,
-  CardActions, PropTypes
+  CardActions,
 } from "@material-ui/core";
 import Box from "@material-ui/core/Box"
-import DownloadIcon from "@material-ui/icons/OpenInNew";
-import ErrorIcon from "@material-ui/icons/ErrorOutline";
 import CardButtons from "./CardButtons";
+import Grow from "@material-ui/core/Grow";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -46,33 +44,37 @@ const useStyles = makeStyles((theme) => ({
 
 function CardGenerator(props) {
   const classes = useStyles()
+  const [show] = React.useState(true);
+
   return (
-    <Grid item xs={12} sm={6} md={4}>
-      <Card className={classes.card} elevation={4}>
-        {/*klasaanduiding*/}
-        <Box className={classes.niveau} fontWeight={"fontWeightMedium"}>
-          {props.klas} VWO
-        </Box>
+    <Grow in={show}>
+      <Grid item xs={12} sm={6} md={4}>
+        <Card className={classes.card} elevation={4}>
+          {/*klasaanduiding*/}
+          <Box className={classes.niveau} fontWeight={"fontWeightMedium"}>
+            {props.klas} VWO
+          </Box>
 
-        <CardContent className={classes.cardContent}>
-          <Box fontSize="28px" m={1} fontWeight={"fontWeightMedium"}>
-            {props.onderwerp}
-          </Box>
-          <Box fontSize="18px" m={1} fontWeight={"fontWeightRegular"}>
-            Boek: {props.boek}
-          </Box>
-          <Box fontSize="18px" m={1} fontWeight={"fontWeightRegular"}>
-            Lesstof: {props.lesstof}
-          </Box>
-        </CardContent>
+          <CardContent className={classes.cardContent}>
+            <Box fontSize="28px" m={1} fontWeight={"fontWeightMedium"}>
+              {props.onderwerp}
+            </Box>
+            <Box fontSize="18px" m={1} fontWeight={"fontWeightRegular"}>
+              Boek: {props.boek}
+            </Box>
+            <Box fontSize="18px" m={1} fontWeight={"fontWeightRegular"}>
+              Lesstof: {props.lesstof}
+            </Box>
+          </CardContent>
 
-        <CardActions className={classes.buttons}>
-          <Box>
-            <CardButtons onderwerp={props.onderwerp} documentLink={props.documentLink}/>
-          </Box>
-        </CardActions>
-      </Card>
-    </Grid>
+          <CardActions className={classes.buttons}>
+            <Box>
+              <CardButtons onderwerp={props.onderwerp} documentLink={props.documentLink}/>
+            </Box>
+          </CardActions>
+        </Card>
+      </Grid>
+    </Grow>
   )
 }
 

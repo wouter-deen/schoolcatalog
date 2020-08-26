@@ -1,16 +1,9 @@
 import React from "react";
-import {
-  Typography,
-  makeStyles,
-  Link,
-  createMuiTheme,
-  ThemeProvider,
-  Breadcrumbs, Card
-} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import Box from "@material-ui/core/Box"
 import ProjectLijst from "./ProjectLijst"
 import Footer from "../../../Footer";
-import bg from "./floral-tropical-seamless-pattern-palm-leaves-background_1016-51.jpg";
+import bg from "./bg.jpg";
 import NavBar from "../../../NavBar/NavBar";
 
 const useStyles = makeStyles((theme) => ({
@@ -48,32 +41,11 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "100%",
     minHeight: "100%",
     zIndex: -10
+  },
+  bottomSpacing: {
+    paddingBottom: theme.spacing(5)
   }
 }));
-
-const footerTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#000000'
-    }
-  },
-});
-
-//copyright
-function Copyright() {
-  return (
-    <ThemeProvider theme={footerTheme}>
-      <Typography variant="body2" color="primary" align="center">
-        {'Copyright © '}
-        <Link color="primary" href="https://github.com/wouter-deen" target="_blank">
-          Wouter Deen
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    </ThemeProvider>
-  );
-}
 
 export default function Natuurkunde() {
   const classes = useStyles();
@@ -87,7 +59,7 @@ export default function Natuurkunde() {
         <div className={classes.title}>
           {/*<img className={classes.logoImage} src={Logo} alt="logo"/>*/}
           <Box color="#ffffff" fontSize="56px" m={1} fontWeight={"fontWeightBold"}>
-            Natuurkunde💡
+            Natuurkunde<span role="img" aria-label="emoji">💡</span>
           </Box>
           <Box color="#ffffff" fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"}>
             Bekijk hier al mijn samenvattingen.
@@ -97,6 +69,7 @@ export default function Natuurkunde() {
         <ProjectLijst/>
         <Footer/>
       </div>
+      <div className={classes.bottomSpacing}/>
     </div>
   )
 }

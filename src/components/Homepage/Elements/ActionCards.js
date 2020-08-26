@@ -1,10 +1,9 @@
 import React from "react";
-import {Card, CardContent, CardMedia, Typography, Button, Container, Grid, makeStyles, Link, CssBaseline, CardActions} from "@material-ui/core";
+import {Card, CardContent, CardMedia, Container, Grid, makeStyles} from "@material-ui/core";
 import Box from "@material-ui/core/Box"
 import SamenvattingenImage from "../Images/samenvattingen.png";
 import VideografieImage from "../Images/videografie.png";
 import AboutImage from "../Images/about.png"
-import GoIcon from "@material-ui/icons/ChevronRight";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -91,7 +90,7 @@ const CardRenderer = props => {
 export default function Cards() {
   const classes = useStyles();
   return (
-    <div class={classes.main}>
+    <div className={classes.main}>
       <Container className={classes.cardHead}>
         <Grid container spacing={4} direction="column" alignContent="center">
           {/* Samenvattingen */}

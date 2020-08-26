@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  Typography,
-  makeStyles,
-  Link,
-  createMuiTheme,
-  ThemeProvider, List, ListItem, ListItemAvatar, Avatar, ListItemText, Divider
-} from "@material-ui/core"
+import {makeStyles, List, ListItem, ListItemAvatar, Avatar, ListItemText, Divider} from "@material-ui/core"
 import 'fontsource-roboto';
 import IconReady from '@material-ui/icons/Check'
 import IconOverig from '@material-ui/icons/HighlightOffOutlined'
@@ -48,38 +42,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const footerTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#ffffff'
-    }
-  },
-});
-
-//copyright
-function Copyright() {
-  return (
-    <ThemeProvider theme={footerTheme}>
-      <Typography color="primary" variant="body2" align="center">
-        {'Copyright © '}
-        <Link color="primary" href="https://github.com/wouter-deen" target="_blank">
-          Wouter Deen
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    </ThemeProvider>
-
-  );
-}
-
 //ListItemLink
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
 }
 
 //rendering
-function Vakken() {
+export default function VakkenLijst() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
@@ -92,7 +61,7 @@ function Vakken() {
               <IconReady/>
             </Avatar>
           </ListItemAvatar>
-          <ListItemLink href="/#/vakken/natuurkunde">
+          <ListItemLink href="/vakken/natuurkunde/">
             <ListItemText primary="Natuurkunde" secondary="Samenvattingen" />
           </ListItemLink>
         </ListItem>
@@ -105,7 +74,7 @@ function Vakken() {
               <IconReady/>
             </Avatar>
           </ListItemAvatar>
-          <ListItemLink href="/#/vakken/scheikunde">
+          <ListItemLink href="/vakken/scheikunde/">
             <ListItemText primary="Scheikunde" secondary="Samenvattingen" />
           </ListItemLink>
         </ListItem>
@@ -146,5 +115,3 @@ function Vakken() {
     </div>
   )
 }
-
-export default Vakken

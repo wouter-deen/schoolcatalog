@@ -2,12 +2,9 @@ import React from "react";
 import {makeStyles} from "@material-ui/core";
 import Fab from '@material-ui/core/Fab';
 import AppsIcon from '@material-ui/icons/Apps';
-import CameraIcon from '@material-ui/icons/CameraAlt';
 import NavigationIcon from '@material-ui/icons/SchoolRounded';
-import { Button, Dialog, DialogTitle, DialogContent, TextField, DialogActions, DialogContentText, Menu, MenuItem} from '@material-ui/core';
-import PlusIcon from '@material-ui/icons/AddBoxRounded'
-import Box from "@material-ui/core/Box";
-import GoIcon from "@material-ui/icons/ChevronRight"
+import app from "../../Firebase/base";
+import LoginDialog from "../../Firebase/LoginDialog";
 
 const useStyles = makeStyles((theme) => ({
   FunctionButtons: {
@@ -32,59 +29,45 @@ const useStyles = makeStyles((theme) => ({
 
 function FButtons() {
   const classes = useStyles();
+  const currentUser = app.auth().currentUser
+  const [openLoginDialog, setOpenLoginDialog] = React.useState(false);
 
-  const [open, setOpen] = React.useState(false);
+  const handleClickOpenLogin = () => {
+    setOpenLoginDialog(true);
+  };
 
-  const handleClickSamenvattingen = () => {
-    setOpen(true)
-  }
+  const handleCloseLogin = (value) => {
+    setOpenLoginDialog(false);
+  };
 
-  const handleCloseSamenvattingen = () => {
-    setOpen(false)
-  }
-
-  return (
-    <div>
-      {/*functieknoppen*/}
+  if(currentUser) {
+    return (
       <div className={classes.FunctionButtons}>
-        <Fab color="primary" variant="extended" href="/#/vakken">
+        <Fab color="primary" variant="extended" href="/vakken/">
           <NavigationIcon className={classes.extendedIcon}/>
           Samenvattingen
         </Fab>
 
-        <Fab aria-label="vakken" href={"/#/vakken"}>
+        <Fab aria-label="vakken" href={"/vakken/"}>
           <AppsIcon />
         </Fab>
-
       </div>
-
-      {/* Samenvattingen popup screen */}
-      <Dialog open={open} onClose={handleCloseSamenvattingen}>
-        <Box fontSize="30px" m={1} fontWeight={"fontWeightBold"} align="center" className={classes.dialogTitle}>
+    )
+  } else {
+    return (
+      <div className={classes.FunctionButtons}>
+        <Fab color="primary" variant="extended" onClick={handleClickOpenLogin}>
+          <NavigationIcon className={classes.extendedIcon}/>
           Samenvattingen
-        </Box>
-        <DialogContent align="center">
+        </Fab>
 
-          <div className={classes.dialogButton}>
-            <Button variant="contained" endIcon={<GoIcon/>} color="primary" href="/#/vakken/natuurkunde">
-              Natuurkunde
-            </Button>
-          </div>
-
-          <div className={classes.dialogButton}>
-            <Button variant="contained" endIcon={<GoIcon/>} color="primary" href="/#/vakken/scheikunde">
-              Scheikunde
-            </Button>
-          </div>
-
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseSamenvattingen} color="default">Sluiten</Button>
-        </DialogActions>
-      </Dialog>
-
-    </div>
-  )
+        <Fab aria-label="vakken" onClick={handleClickOpenLogin}>
+          <AppsIcon />
+        </Fab>
+        <LoginDialog open={openLoginDialog} onClose={handleCloseLogin}/>
+      </div>
+    )
+  }
 }
 
 export default FButtons

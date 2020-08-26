@@ -1,12 +1,5 @@
 import React from "react";
 import {Container, Grid, makeStyles} from "@material-ui/core";
-import NOVA1 from './Samenvattingen/NOVA Samenvatting H1.pdf'
-import NOVA2 from './Samenvattingen/NOVA Samenvatting H5.pdf'
-import NOVA3 from './Samenvattingen/NOVA Samenvatting H7.1-7.4.pdf'
-import SN1 from './Samenvattingen/SN Samenvatting H1-2.pdf'
-import SN2 from './Samenvattingen/SN Samenvatting H3.pdf'
-import SN3 from './Samenvattingen/SN Samenvatting H4.pdf'
-import SN4 from './Samenvattingen/SN Samenvatting H4.1-3+5.pdf'
 import CardGenerator from "../ActionCards/CardGenerator";
 
 const useStyles = makeStyles((theme) => ({
@@ -61,7 +54,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Homepage() {
+export default function ProjectLijst() {
+
   const classes = useStyles();
   return (
     <div>
@@ -72,54 +66,52 @@ function Homepage() {
             onderwerp="Elektriciteit en schakelingen"
             boek="NOVA"
             lesstof="hfst. 6.1 t/m 6.4, 2.1 & 2.3"
-            documentLink={NOVA1}
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FNOVA%20Samenvatting%20H1.pdf?alt=media&token=ca55a641-7704-4961-9f7f-1fd78e1646f8"
           />
           <CardGenerator
             klas="3"
             onderwerp="Krachten"
             boek="NOVA"
             lesstof="hfst. 5"
-            documentLink={NOVA2}
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FNOVA%20Samenvatting%20H5.pdf?alt=media&token=20d17b20-75e9-44d8-b9b7-cf32f3534ff6"
           />
           <CardGenerator
             klas="3"
             onderwerp="Straling"
             boek="NOVA"
             lesstof="hfst. 7.1 t/m 7.4"
-            documentLink={NOVA3}
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FNOVA%20Samenvatting%20H7.1-7.4.pdf?alt=media&token=aab4cbb1-0458-4c0e-831e-664d80d96bb8"
           />
           <CardGenerator
             klas="4"
             onderwerp="Beweging"
             boek="Systematische Natuurkunde"
             lesstof="hfst. 1 & 2"
-            documentLink={SN1}
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FSN%20Samenvatting%20H1-2.pdf?alt=media&token=2c615f65-e05a-4e72-8cc0-ccc7a6589c45"
           />
           <CardGenerator
             klas="4"
             onderwerp="Kracht en beweging"
             boek="Systematische Natuurkunde"
             lesstof="hfst. 3"
-            documentLink={SN2}
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FSN%20Samenvatting%20H3.pdf?alt=media&token=f4c2fee9-8b7b-46d1-998a-2fe8fc5e803e"
           />
           <CardGenerator
             klas="4"
             onderwerp="Energie en warmt"
             boek="Systematische Natuurkunde"
             lesstof="hfst. 4"
-            documentLink={SN3}
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FSN%20Samenvatting%20H4.1-3%2B5.pdf?alt=media&token=7a6d4a7b-95f3-47be-87e6-a2caaaabf126"
           />
           <CardGenerator
             klas="4"
             onderwerp="Energie en warmte"
             boek="Systematische Natuurkunde"
             lesstof="hfst. 4.1 t/m 4.3 & 4.5"
-            documentLink={SN4}
+            documentLink="https://firebasestorage.googleapis.com/v0/b/woutersite-45fe9.appspot.com/o/Samenvattingen%2FNatuurkunde%2FSN%20Samenvatting%20H4.pdf?alt=media&token=fc830c4d-f4fa-44ca-808b-394fe1c686d3"
           />
         </Grid>
       </Container>
     </div>
   )
 }
-
-export default Homepage

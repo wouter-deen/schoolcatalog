@@ -1,10 +1,6 @@
 import React from "react"
 import {
-  Typography,
   makeStyles,
-  Link,
-  createMuiTheme,
-  ThemeProvider, Breadcrumbs, List, ListItem, ListItemAvatar, Avatar, ListItemText, Divider
 } from "@material-ui/core"
 import Box from "@material-ui/core/Box"
 import 'fontsource-roboto';
@@ -39,16 +35,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const footerTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#000000'
-    }
-  },
-});
-
 //rendering
-function Homepage() {
+export default function Vakken() {
   const classes = useStyles();
   return (
     <div className={classes.main}>
@@ -62,12 +50,8 @@ function Homepage() {
             Vakken
           </Box>
         </div>
-
         <VakkenLijst/>
-
       </div>
     </div>
   )
 }
-
-export default Homepage

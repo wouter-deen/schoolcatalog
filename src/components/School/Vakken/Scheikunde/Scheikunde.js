@@ -1,15 +1,9 @@
 import React from "react";
 import {
-  Typography,
   makeStyles,
-  Link,
-  createMuiTheme,
-  ThemeProvider,
-  Breadcrumbs
 } from "@material-ui/core";
 import Box from "@material-ui/core/Box"
 import ProjectLijst from "./ProjectLijst"
-import Background from "./bg.jpg"
 import Footer from "../../../Footer";
 import bg from "./bg.jpg";
 import NavBar from "../../../NavBar/NavBar";
@@ -48,16 +42,11 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "100%",
     minHeight: "100%",
     zIndex: -10
+  },
+  bottomSpacing: {
+    paddingBottom: theme.spacing(5)
   }
 }));
-
-const footerTheme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#000000'
-    }
-  },
-});
 
 export default function Scheikunde() {
   const classes = useStyles();
@@ -71,7 +60,7 @@ export default function Scheikunde() {
         <div className={classes.title}>
           {/*<img className={classes.logoImage} src={Logo} alt="logo"/>*/}
           <Box color="#000000" fontSize="56px" m={1} fontWeight={"fontWeightBold"}>
-            Scheikunde🧪
+            Scheikunde<span role="img" aria-label="emoji">🧪</span>
           </Box>
           <Box color="#000000" fontSize="h4.fontSize" m={1} fontWeight={"fontWeightBold"}>
             Bekijk hier al mijn samenvattingen.
@@ -82,6 +71,7 @@ export default function Scheikunde() {
 
         <Footer/>
       </div>
+      <div className={classes.bottomSpacing}/>
     </div>
   )
 }
