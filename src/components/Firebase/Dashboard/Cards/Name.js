@@ -1,12 +1,13 @@
 import React from "react";
 import {
-  Container,
+  Card,
+  CardContent,
   Grid,
   makeStyles,
+  Typography,
 } from "@material-ui/core";
-import UpdateMail from "./UpdateMail";
-import UpdatePassword from "./UpdatePassword";
-import Name from "./Name";
+import Box from "@material-ui/core/Box"
+import app from "../../base";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -45,36 +46,33 @@ const useStyles = makeStyles((theme) => ({
   main: {
     alignSelf: "center"
   },
-  accordion: {
-    marginTop: theme.spacing(2),
-    width: "100%"
-  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
-  },
-  submitButton: {
-    marginRight: theme.spacing(-1),
-    marginBottom: theme.spacing(-1)
-  },
-  alerts: {
-    marginTop: theme.spacing(1)
   },
 }));
 
 
 export default function Cards(props, {history}) {
   const classes = useStyles();
+  console.log("DisplayName: " + app.auth().currentUser.displayName)
 
   return (
-    <div>
-      <Container className={classes.cardGrid}>
-        <Grid container spacing={4} direction="row" alignContent="center">
-          <UpdateMail/>
-          <UpdatePassword/>
-          <Name/>
-        </Grid>
-      </Container>
-    </div>
+    <Grid item xs={12} sm={6} md={6}>
+      <Card className={classes.card} elevation={2}>
+        <CardContent className={classes.cardContent}>
+          <Box fontSize="40px" m={1} fontWeight={"fontWeightBold"}>
+            Naam
+          </Box>
+          <Typography m={1} fontWeight={"fontWeightRegular"}>
+            Je gebruikersnaam is
+          </Typography>
+          <Box className={classes.inline} color="#546e7a">{app.auth().currentUser.displayName}</Box>
+          <Typography>
+            Je kan je gebruikersnaam niet veranderen.
+          </Typography>
+        </CardContent>
+      </Card>
+    </Grid>
   )
 }

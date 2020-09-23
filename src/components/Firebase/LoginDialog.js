@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function LoginDialog(props, {history}) {
+function LoginDialog(props) {
   const classes = useStyles();
   const { onClose, selectedValue, open } = props;
   const [openAlertPassword, setOpenAlertPassword] = React.useState(false);

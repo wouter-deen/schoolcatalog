@@ -8,6 +8,7 @@ import Footer from "../Footer"
 import NavBar from "../NavBar/NavBar";
 import bg from "./Images/bg2.jpg";
 import app from "../Firebase/base";
+import UserInfoDialog from "./UserInfoDialog";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -36,10 +37,27 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
 //rendering
 function Homepage() {
   const classes = useStyles();
   const currentUser = app.auth().currentUser
+
+  const [openUserInfoDialog, setOpenUserInfoDialog] = React.useState(false);
+  const [checkedLogin, setCheckedLogin] = React.useState(false);
+
+  const handleCloseUserInfoDialog = (value) => {
+    setOpenUserInfoDialog(false);
+  };
+
+  if(checkedLogin === false) {
+    if(currentUser) {
+      if (currentUser.displayName === null || !currentUser.displayName) {
+        setOpenUserInfoDialog(true);
+        setCheckedLogin(true)
+      }
+    }
+  }
 
   return (
     <div className={classes.main}>
@@ -59,6 +77,7 @@ function Homepage() {
         <Footer/>
         <div className={classes.bottomSpacing}/>
       </div>
+      <UserInfoDialog open={openUserInfoDialog} onClose={handleCloseUserInfoDialog}/>
     </div>
   )
 }

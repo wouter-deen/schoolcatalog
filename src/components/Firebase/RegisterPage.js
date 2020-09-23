@@ -107,11 +107,12 @@ export default function SignUp({history}) {
   const handleSignUp = useCallback(async event => {
     event.preventDefault();
     const { email, password, name } = event.target.elements;
+    const dName = name.value
     if(email.value.includes("veluwscollege.nl") || email.value.includes("veluwseonderwijsgroep.nl")) {
       try {
         setLoading(true)
-        await app.auth().createUserWithEmailAndPassword(email.value, password.value);
-        await app.auth().currentUser.updateProfile({displayName: name.value})
+        await app.auth().createUserWithEmailAndPassword(email.value, password.value)
+        await app.auth().currentUser.updateProfile({displayName: dName})
         setLoading(false)
         window.location.href = '/dashboard/';
       } catch (e) {
