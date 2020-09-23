@@ -42,10 +42,10 @@ export default function Footer() {
       <div className={classes.main}>
         <footer className={classes.footer}>
           <Box color="#ffffff" fontWeight="fontWeightMedium" fontSize="20px" align="center">
-            Gemaakt met <span role="img" aria-label="emoji">❤</span>️
+            Gemaakt met ❤️
           </Box>
           <Box color="#ffffff" align="center" className={classes.disclaimer}>
-            Deze site komt net uit de testfase (v1.0.0) en kan fouten bevatten.
+            Deze site komt net uit de testfase (v1.0.3) en kan fouten bevatten.
             <Link href="https://github.com/wouter-deen/schoolcatalog/issues" target="_blank" className={classes.reportFouten}>
               Rapporteer fouten hier.
             </Link>

@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1)
   },
   alerts: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(4),
   },
 }));
 

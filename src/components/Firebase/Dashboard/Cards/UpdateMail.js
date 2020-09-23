@@ -71,10 +71,10 @@ const useStyles = makeStyles((theme) => ({
   submitButton: {
     marginRight: theme.spacing(-1),
     marginBottom: theme.spacing(-4),
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
   },
   alerts: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(4),
   },
 }));
 
