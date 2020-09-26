@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
 function Homepage() {
   const classes = useStyles();
   const currentUser = app.auth().currentUser
+  if(currentUser) {
+    console.log("DisplayName: " + currentUser.displayName)
+  }
 
   const [openUserInfoDialog, setOpenUserInfoDialog] = React.useState(false);
   const [checkedLogin, setCheckedLogin] = React.useState(false);

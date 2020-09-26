@@ -55,32 +55,35 @@ export default function VakkenLijst() {
 
       <List className={classes.list}>
 
+        {/*natuurkunde*/}
         <ListItem>
           <ListItemAvatar>
             <Avatar>
               <IconReady/>
             </Avatar>
           </ListItemAvatar>
-          <ListItemLink href="/vakken/natuurkunde/">
+          <ListItemLink href="/vakken/natuurkunde">
             <ListItemText primary="Natuurkunde" secondary="Samenvattingen" />
           </ListItemLink>
         </ListItem>
 
         <Divider variant="inset" component="li" />
 
+        {/*scheikunde*/}
         <ListItem>
           <ListItemAvatar>
             <Avatar>
               <IconReady/>
             </Avatar>
           </ListItemAvatar>
-          <ListItemLink href="/vakken/scheikunde/">
+          <ListItemLink href="/vakken/scheikunde">
             <ListItemText primary="Scheikunde" secondary="Samenvattingen" />
           </ListItemLink>
         </ListItem>
 
         <Divider variant="inset" component="li" />
 
+        {/*wiskunde*/}
         <ListItem disabled>
           <ListItemAvatar>
             <Avatar>
@@ -92,6 +95,7 @@ export default function VakkenLijst() {
 
         <Divider variant="inset" component="li" />
 
+        {/*bedrijfseconomie*/}
         <ListItem disabled>
           <ListItemAvatar>
             <Avatar>
@@ -103,6 +107,7 @@ export default function VakkenLijst() {
 
         <Divider variant="inset" component="li" />
 
+        {/*biologie*/}
         <ListItem disabled>
           <ListItemAvatar>
             <Avatar>
