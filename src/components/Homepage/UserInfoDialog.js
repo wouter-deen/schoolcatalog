@@ -40,9 +40,6 @@ const useStyles = makeStyles((theme) => ({
   mobileLink: {
     marginLeft: "4px"
   },
-  aanmeldenButton: {
-    marginRight: "50px"
-  },
   dialogTitle: {
     alignSelf: "center"
   },
@@ -68,6 +65,9 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: red[700],
     },
   },
+  name: {
+    marginBottom: theme.spacing(2)
+  }
 }))
 
 function UserInfoDialog(props) {
@@ -103,27 +103,31 @@ function UserInfoDialog(props) {
     event.preventDefault();
     const { name } = event.target.elements;
     console.log(name.value)
-    try {
-      setLoading(true)
-      await app.auth().currentUser.updateProfile({displayName: name.value})
-      setLoading(false)
-      handleClose()
-    } catch (e) {
-      if(!name) {
-        setOpenAlertInvalidName(true)
-      } else {
-        console.log("ONBEKENDE FOUT: " + e)
-        setOpenAlertInvalidName(true)
+    if(name.value !== "") {
+      try {
+        setLoading(true)
+        await app.auth().currentUser.updateProfile({displayName: name.value})
+        setLoading(false)
+        handleClose()
+      } catch (e) {
+        if(!name) {
+          setOpenAlertInvalidName(true)
+        } else {
+          console.log("ONBEKENDE FOUT: " + e)
+          setOpenAlertInvalidName(true)
+        }
       }
+    } else {
+      setOpenAlertInvalidName(true)
     }
-  }, []);
+  }, [handleClose]);
 
   return (
     <div>
       <Dialog onClose={handleClose} open={open} className={classes.dialog}>
         <DialogTitle className={classes.dialogTitle}>
           <Box>
-            {success ? <CheckIcon fontSize="large" fontWeight="fontWeightBold"/> : loading ? <CircularProgress size={40}/> : <Box fontSize="30px">Vul je gegevens aan</Box>}
+            {success ? <CheckIcon fontSize="large" fontWeight="fontWeightBold"/> : loading ? <CircularProgress size={40}/> : <Box fontSize="30px">Vul je gegevens aan.</Box>}
           </Box>
         </DialogTitle>
         <DialogContent>
@@ -131,6 +135,7 @@ function UserInfoDialog(props) {
             {/*naam*/}
             <Grid item xs={12}>
               <TextField
+                className={classes.name}
                 autoComplete="name"
                 name="name"
                 variant="outlined"
@@ -179,11 +184,11 @@ function UserInfoDialog(props) {
               </Collapse>
             </div>
 
-            {/*wachtwoord vergeten + registreren*/}
+            {/*betrouwbaar*/}
             <Grid container style={{marginTop: 10}}>
               <Grid item xs>
                 <Link href="#" variant="body2" color="textSecondary">
-                  Alle informatie wordt uiteraard betrouwbaar opgeslagen.
+                  Alle informatie wordt betrouwbaar opgeslagen.
                 </Link>
               </Grid>
             </Grid>

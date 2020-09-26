@@ -1,10 +1,8 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core";
 import Fab from '@material-ui/core/Fab';
-import AppsIcon from '@material-ui/icons/Apps';
 import NavigationIcon from '@material-ui/icons/SchoolRounded';
-import app from "../../Firebase/base";
-import LoginDialog from "../../Firebase/LoginDialog";
+import AccountIcon from "@material-ui/icons/AccountCircle"
 
 const useStyles = makeStyles((theme) => ({
   FunctionButtons: {
@@ -29,45 +27,19 @@ const useStyles = makeStyles((theme) => ({
 
 function FButtons() {
   const classes = useStyles();
-  const currentUser = app.auth().currentUser
-  const [openLoginDialog, setOpenLoginDialog] = React.useState(false);
 
-  const handleClickOpenLogin = () => {
-    setOpenLoginDialog(true);
-  };
+  return (
+    <div className={classes.FunctionButtons}>
+      <Fab color="primary" variant="extended" href="/vakken/">
+        <NavigationIcon className={classes.extendedIcon}/>
+        Samenvattingen
+      </Fab>
 
-  const handleCloseLogin = (value) => {
-    setOpenLoginDialog(false);
-  };
-
-  if(currentUser) {
-    return (
-      <div className={classes.FunctionButtons}>
-        <Fab color="primary" variant="extended" href="/vakken/">
-          <NavigationIcon className={classes.extendedIcon}/>
-          Samenvattingen
-        </Fab>
-
-        <Fab aria-label="vakken" href={"/vakken/"}>
-          <AppsIcon />
-        </Fab>
-      </div>
-    )
-  } else {
-    return (
-      <div className={classes.FunctionButtons}>
-        <Fab color="primary" variant="extended" onClick={handleClickOpenLogin}>
-          <NavigationIcon className={classes.extendedIcon}/>
-          Samenvattingen
-        </Fab>
-
-        <Fab aria-label="vakken" onClick={handleClickOpenLogin}>
-          <AppsIcon />
-        </Fab>
-        <LoginDialog open={openLoginDialog} onClose={handleCloseLogin}/>
-      </div>
-    )
-  }
+      <Fab aria-label="vakken" href={"/dashboard"}>
+        <AccountIcon />
+      </Fab>
+    </div>
+  )
 }
 
 export default FButtons

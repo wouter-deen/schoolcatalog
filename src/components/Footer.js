@@ -45,20 +45,18 @@ export default function Footer() {
             Gemaakt met ❤️
           </Box>
           <Box color="#ffffff" align="center" className={classes.disclaimer}>
-            Deze site komt net uit de testfase (v1.0.4) en kan fouten bevatten.
+            Deze site is gemaakt voor educatieve doeleinden. Als je fouten tegenkomt,
             <Link href="https://github.com/wouter-deen/schoolcatalog/issues" target="_blank" className={classes.reportFouten}>
-              Rapporteer fouten hier.
+              rapporteer ze hier.
             </Link>
           </Box>
           <Box color="#ffffff" fontSize="14px" align="center" className={classes.copyright}>
             {'Copyright © '}
             <ThemeProvider theme={whiteTheme}>
               <Link color="primary" href="https://www.instagram.com/wouter_deen/" target="_blank">
-                Wouter Deen
-              </Link>{' '}
+                Wouter Deen {new Date().getFullYear()}. Alle rechten voorbehouden.
+              </Link>
             </ThemeProvider>
-            {new Date().getFullYear()}
-            {'.'}
           </Box>
         </footer>
       </div>

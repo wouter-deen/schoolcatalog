@@ -42,9 +42,6 @@ const useStyles = makeStyles((theme) => ({
 function Homepage() {
   const classes = useStyles();
   const currentUser = app.auth().currentUser
-  if(currentUser) {
-    console.log("DisplayName: " + currentUser.displayName)
-  }
 
   const [openUserInfoDialog, setOpenUserInfoDialog] = React.useState(false);
   const [checkedLogin, setCheckedLogin] = React.useState(false);
@@ -53,6 +50,7 @@ function Homepage() {
     setOpenUserInfoDialog(false);
   };
 
+  //add additional info alert
   if(checkedLogin === false) {
     if(currentUser) {
       if (currentUser.displayName === null || !currentUser.displayName) {
@@ -70,11 +68,12 @@ function Homepage() {
         {/*titel*/}
         <div className={classes.title}>
           {/*<img className={classes.logoImage} src={Logo} alt="logo"/>*/}
-          {currentUser ? <Box fontSize="60px" m={1} fontWeight="fontWeightBold" color="#ffffff">Hey {currentUser.displayName}<span role="img" aria-label="emoji">👋</span></Box>
+          {currentUser ? <Box fontSize="60px" m={1} fontWeight="fontWeightBold" color="#ffffff">Hey, {currentUser.displayName}!</Box>
             : <Box fontSize="75px" m={1} fontWeight="fontWeightBold" color="#ffffff">Hey <span role="img" aria-label="emoji">👋</span></Box>}
-          {currentUser ? <Box fontSize="h4.fontSize" m={1} fontWeight="fontWeightBold" color="#ffffff">Welkom terug!</Box>
-            : <Box fontSize="h4.fontSize" m={1} fontWeight="fontWeightBold" color="#ffffff">Ik ben Wouter, welkom op mijn site.</Box>}
-          <FunctionButtons/>
+          {currentUser ? <Box fontSize="h4.fontSize" m={1} fontWeight="fontWeightMedium" color="#ffffff">Welkom terug.</Box>
+            : <Box fontSize="h4.fontSize" m={1} fontWeight="fontWeightMedium" color="#ffffff">Ik ben Wouter, welkom op mijn site.</Box>}
+          {currentUser ? <FunctionButtons/> : <div/>}
+
         </div>
         <ActionCards/>
         <Footer/>

@@ -183,7 +183,7 @@ export default function Cards(props, {history}) {
                       required
                       fullWidth
                       color="primary"
-                      id="password"
+                      id="passwordMail"
                       label="Wachtwoord"
                       name="password"
                       autoComplete="password"

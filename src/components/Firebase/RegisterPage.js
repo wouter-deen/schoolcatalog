@@ -5,8 +5,6 @@ import {
   TextField,
   Link,
   Grid,
-  FormControlLabel,
-  Checkbox,
   Typography,
   Container,
   CssBaseline,
@@ -34,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "rgb(52,199,89)",
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -44,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
   main: {
-
   },
   specialNotice: {
     paddingTop: theme.spacing(1),
@@ -64,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(8)
   },
   alerts: {
-    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(1)
   },
 }));
 
@@ -84,6 +81,7 @@ export default function SignUp({history}) {
   const [openAlertWeakPassword, setOpenAlertWeakPassword] = React.useState(false);
   const [openAlertInvalidEmail, setOpenAlertInvalidEmail] = React.useState(false);
   const [openAlertUserExists, setOpenAlertUserExists] = React.useState(false);
+  const [openAlertAlgemeneVoorwaarden, setOpenAlertAlgemeneVoorwaarden] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
   function CloseAllAlerts() {
@@ -106,27 +104,23 @@ export default function SignUp({history}) {
 
   const handleSignUp = useCallback(async event => {
     event.preventDefault();
-    const { email, password, name } = event.target.elements;
-    if(email.value.includes("veluwscollege.nl") || email.value.includes("veluwseonderwijsgroep.nl")) {
-      try {
-        setLoading(true)
-        await app.auth().createUserWithEmailAndPassword(email.value, password.value);
-        await app.auth().currentUser.updateProfile({displayName: name.value})
-        setLoading(false)
-        window.location.href = '/dashboard/';
-      } catch (e) {
-        if(e.code === "auth/weak-password") {
-          setOpenAlertWeakPassword(true)
-        } else if(e.code === "auth/invalid-email"){
-          setOpenAlertInvalidEmail(true)
-        } else if(e.code === "auth/email-already-exists"){
-          setOpenAlertUserExists(true)
-        } else {
-          return console.log("ONBEKENDE FOUT ONTDEKT. Error code: " + e)
-        }
+    const { email, password } = event.target.elements;
+    try {
+      setLoading(true)
+      await app.auth().createUserWithEmailAndPassword(email.value, password.value);
+      setLoading(false)
+      window.location.href = '/dashboard';
+    } catch (e) {
+      setLoading(false)
+      if(e.code === "auth/weak-password") {
+        setOpenAlertWeakPassword(true)
+      } else if(e.code === "auth/invalid-email"){
+        setOpenAlertInvalidEmail(true)
+      } else if(e.code === "auth/email-already-exists"){
+        setOpenAlertUserExists(true)
+      } else {
+        return console.log("ONBEKENDE FOUT ONTDEKT. Error code: " + e)
       }
-    } else {
-      setOpenAlertInvalidEmail(true)
     }
   }, []);
 
@@ -146,24 +140,11 @@ export default function SignUp({history}) {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
-                  autoComplete="name"
-                  name="name"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="name"
-                  label="Voornaam"
-                  onChange={() => CloseAllAlerts()}
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
                   variant="outlined"
                   required
                   fullWidth
                   id="email"
-                  label="Schoolmail (Veluwse Onderwijsgroep)"
+                  label="Schoolmail"
                   name="email"
                   type="email"
                   onChange={() => CloseAllAlerts()}
@@ -183,12 +164,6 @@ export default function SignUp({history}) {
                   autoComplete="current-password"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" required />}
-                  label="Ik accepteer de algemene voorwaarden."
-                />
-              </Grid>
             </Grid>
             <Button
               type="submit"
@@ -202,13 +177,6 @@ export default function SignUp({history}) {
                 {loading ? <CircularProgress color="secondary" size={25}/> : <Box>registreren</Box>}
               </ThemeProvider>
             </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Link onClick={handleClickOpen} variant="body2" color="textSecondary">
-                  Heb je al een account? Log in
-                </Link>
-              </Grid>
-            </Grid>
 
             <div className={classes.alerts}>
               <Collapse in={openAlertWeakPassword}>
@@ -268,7 +236,35 @@ export default function SignUp({history}) {
                   Er bestaat al een account met dit mailadres.
                 </Alert>
               </Collapse>
+              <Collapse in={openAlertAlgemeneVoorwaarden}>
+                <Alert
+                  severity="error"
+                  action={
+                    <IconButton
+                      aria-label="close"
+                      color="inherit"
+                      size="small"
+                      onClick={() => {
+                        setOpenAlertAlgemeneVoorwaarden(false);
+                      }}
+                    >
+                      <CloseIcon fontSize="inherit" />
+                    </IconButton>
+                  }
+                >
+                  Om je te registreren, moet je akkoord gaan met de algemene voorwaarden.
+                </Alert>
+              </Collapse>
             </div>
+
+            <Grid container justify="flex-end">
+              <Grid item>
+                <Link onClick={handleClickOpen} variant="body2" color="textSecondary">
+                  Heb je al een account? Log in
+                </Link>
+              </Grid>
+            </Grid>
+
           </form>
         </div>
       </Container>
